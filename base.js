@@ -4,8 +4,9 @@ $(document).ready(function(){
 
 	// find todays date and append to headerDate div
 	var currentDate = new Date();
-	// var currentDateShort = currentDate.val($.datepicker.formatDate('dd M yy', new Date()));
-	$("#headerDate").append(currentDate);
+	var currentDateShort = $.format.date(currentDate, 'H:mm ddd d MMM');
+	
+	$("#headerDate").append(currentDateShort);
 
 	// find starting number of posts, append to count div
 	var countPosts = $(".list").children().size();
@@ -17,8 +18,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 		var newPostInput = $("#newPostInput").val();
-		var postDate = new Date();
-		$(".list").append('<p>' + newPostInput + postDate + '</p>' +'<hr>');
+		$(".list").append('<p>' + newPostInput + '</p>' +'<hr>');
+		$("p").append('<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">' + new Date() + '</button>');
 
 		// increase post count and append to count div
 		countPosts = countPosts + 1;

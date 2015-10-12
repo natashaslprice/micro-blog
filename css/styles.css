@@ -8,11 +8,6 @@ body {
   background-size: cover;
 }
 
-header {
-	background-color: black;
-	padding-bottom: 40px;
-}
-
 .jumbotron {
 	text-align: center;
 	background-color: transparent;
@@ -20,16 +15,30 @@ header {
 
 #headerDate {
 	font-size: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+	border: solid white;
+	padding: 10px;
 }
 
- .input-group {
- 	margin-top: 20px;
+h1 {
+	margin: 0px;
+}
+
+#count {
+	text-align: center;
+	margin-top: 60px;
+	font-size: 25px;
+}
+
+.btn {
+	margin-bottom: 10px;
+}
+
+.input-group {
  	padding: 10px;
  }
 
- #LHC {
- 	border-right: dashed black 2px;
- }
 
 p {
 	margin: 5px;
@@ -40,5 +49,5 @@ p {
 }
 
 hr {
-	margin: 5px;
+	margin: 10px;
 }

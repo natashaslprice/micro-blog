@@ -30,17 +30,17 @@
         <div class="col-sm-2 col-sm-offset-1" id="LHC">
           <h1 id="headerDate"></h1>
           <div id="count"></div>
-          <div id="latestPost">Date of latest post</div>
-          <div id="firstPost">Date of first post</div>
         </div> <!-- end of LHC -->
 
         <div class="col-sm-7 col-sm-offset-1" id="RHC">
-          <div class="input-group">
-            <input type="text" id="newPostInput" class="form-control" placeholder="What is in your brain? Dump it here">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-default">Go!</button>
-            </span>
-          </div> <!-- end of input group -->
+          <form id="form">
+            <div class="form-group">
+              <textarea type="text" id="newPostInput" class="form-control" rows="2" placeholder="What is in your brain?"></textarea>
+            </div>
+            <div class="text-right">
+              <button type="submit" class="btn btn-default">Dump</button>
+            </div>  
+          </form> <!-- end of form -->
           <div class="list"></div>
         </div> <!-- end of RHC -->
       

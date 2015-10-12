@@ -18,16 +18,19 @@ $(document).ready(function(){
 	var countPosts = $("p").size();
 	$("#count").append(countPosts + " posts");
 
+	// create delete button
+	var deleteButton = '<button type="button" class="deleteButton" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>';
+
 
 	// take #newPostInput and prepend to list
-	$("#form").submit(function(e) {
+	$("#form").on('submit', function(e) {
 		e.preventDefault();
 		
 		if ($("#newPostInput").val().trim().length > 0) {
 			var newPostInput = $("#newPostInput").val();
 			var newPostDate = new Date();
 			var newPostDateShort = $.format.date(newPostDate, 'H:mm, ddd d MMM');
-			$(".list").prepend('<p data-toggle="tooltip" data-placement="right" data-trigger="hover" title="' + newPostDateShort + '">' + newPostInput + '</p>' + '<hr>');
+			$(".list").prepend('<div class="newPost"><p data-toggle="tooltip" data-placement="right" data-trigger="hover" title="' + newPostDateShort + '">' + newPostInput + deleteButton + '</p></div>');
 
 			// increase post count and append to count div
 			countPosts = countPosts + 1;
@@ -37,12 +40,25 @@ $(document).ready(function(){
 			$("#newPostInput").val("");
 
 			// add new post to local storage
-			var posts = $(".list").html();
-			localStorage.setItem('posts', posts);
+			var post = $(".list").html();
+			localStorage.setItem('posts', post);
 		}	
 	});
 
-	
+	// delete post if trash button clicked, change number of posts in count div
+	$(".list").on("click", ".deleteButton", function(e) {
+		e.preventDefault();
+		$(this).parent("p").remove();	
+		countPosts = countPosts - 1;
+		$("#count").text(" ").append(countPosts + " posts");
+	});
+
+	// delete all from local storage
+	$("#deleteAllButton").click(function(e) {
+		e.preventDefault();
+		localStorage.removeItem('posts');
+		location.reload();
+	});
 
 });
 

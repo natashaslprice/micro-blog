@@ -51,3 +51,14 @@ p {
 hr {
 	margin: 10px;
 }
+
+.newPost {
+	width: 100%;
+}
+
+.deleteButton {
+	margin: 2px;
+	padding: 0px;
+	float: right;
+	border: none;
+}

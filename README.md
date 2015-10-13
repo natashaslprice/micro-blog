@@ -1,28 +1,17 @@
-## BLANK_TEMPLATE
+A mico-blog for general thoughts and ideas.
 
-Basic frontend template for projects using HTML, CSS, jQuery, and Bootstrap.
+Users can add posts. Hovering over the posts will show the user at what 
+time and date the post was created. 
 
-Make sure to rename the repo folder, after you clone it, so that you don't confuse yourself later. Try renaming when you clone:
+HTML5 local storage has been used so that posts are saved locally and can
+be viewed even once the browser window has been closed and re-opened. 
 
-``` bash
-git clone CLONE_URL your_project_name
-```
-After you have cloned and renamed your repo, cd into the folder. 
-```bash
-cd your_project_name
-```
-Next check your git remote origin.
-```bash
-git remote -v
-```
+Users can comment on new posts.
 
-It is pointing to the blank_template repo but you want it to point to your own repo. You need to remove the current remote and place your own in.
-```bash
-git remote remove origin
-```
-Next go to your Github page and make a new repo with the same name you just created locally. **Don't click Initialize this repository with a README**. Create Repo, then you will see two options, choose the second " push an existing repository from the command line" follow the instructions
+Used JQuery, Bootstrap, dateFormat.
 
-```bash
-git remote add origin your_github_project.git
-git push -u origin master
-```
+Issues: 
+- commenting on old posts does not work - can't work out why not! 
+- local storage for comments doesn't work because it won't re-append the comments to the correct posts when the page is refreshed
+- deleting posts does not delete the individual posts from local storage. I spent a lot of time trying to work this out and I don't think it will work with how I have set up my JQuery. 
+

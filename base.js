@@ -28,11 +28,11 @@ $(document).ready(function(){
 	var deleteButton = '<button type="button" class="deleteButton" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>';
 
 
-	// on submit 
+	// on submit of new brain dump
 	$("#form").on('submit', function(e) {
 		e.preventDefault();
 		
-		// check if #newPostInput has content and prepend
+		// check if #newPostInput has content and prepend, include tooltip for date
 		if ($("#newPostInput").val().trim().length > 0) {
 			var newPostInput = $("#newPostInput").val();
 			var newPostDate = new Date();

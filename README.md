@@ -15,3 +15,5 @@ Issues:
 - local storage for comments doesn't work because it won't re-append the comments to the correct posts when the page is refreshed
 - deleting posts does not delete the individual posts from local storage. I spent a lot of time trying to work this out and I don't think it will work with how I have set up my JQuery. 
 
+User story:
+As someone with lots to do and think about I want an easy way to keep track of general thoughts and ideas. 
